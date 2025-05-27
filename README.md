@@ -18,12 +18,12 @@ The code is broadly organized by the source data. This project uses both the Ame
 4. acs_functions.R
 * This file includes two user defined functions: cleaning_fun() and sheets_fun().
 *    cleaning_fun(): performs appropriate data cleaning and variable creation for all raw ACS data files.
-*       needs libraries **tidyverse**, **haven** and **fastDummies** to runused in demographics.R and housing.R
+*    needs libraries **tidyverse**, **haven** and **fastDummies** to runused in demographics.R and housing.R
       * sheets_fun(): maps dataframes for excel export.
-         _ needs libraries **tidverse**, and **openxlsx** to run.
-         _ used in demographics_export.R and housing_export.R
-6. demographics.R
-7. housing.R
-8. export files
-      _ demographics_export.R
-      _ housing_export.R
+         * needs libraries **tidverse**, and **openxlsx** to run.
+         * used in demographics_export.R and housing_export.R
+5. demographics.R
+6. housing.R
+7. export files
+* demographics_export.R
+* housing_export.R
