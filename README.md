@@ -11,20 +11,20 @@ The code is broadly organized by the source data. This project uses both the Ame
 
 ## Folder: ACS
 1. acs_init_data_load.R
-   _ This R script file includes code that submits a data request to IPUMS to obtain data files.
-   _ You only need to run this the first time to get the necessary .xml and .dat.gz files to load to your workspace. The data files will be saved to your data folder which will be called in by the demographics.R and housing.R files. 
+   This R script file includes code that submits a data request to IPUMS to obtain data files.
+   You only need to run this the first time to get the necessary .xml and .dat.gz files to load to your workspace. The data files will be saved to your data folder which will be called in by the demographics.R and housing.R files. 
 2. acs_master.R
-   _ This file is the master file that will execute the main code (after the initial data is downloaded to your project). One thing to note about this file is that objects **demog_ddi** and **housing_ddi** are used to call the appropriate .xml file. You should edit this according to your own .xml file in your data folder.  
+   This file is the master file that will execute the main code (after the initial data is downloaded to your project). One thing to note about this file is that objects **demog_ddi** and **housing_ddi** are used to call the appropriate .xml file. You should edit this according to your own .xml file in your data folder.
 3. acs_functions.R
-   _ This file includes two user defined functions: cleaning_fun() and sheets_fun().
-    _ cleaning_fun(): performs appropriate data cleaning and variable creation for all raw ACS data files.
-     _ needs libraries **tidyverse**, **haven** and **fastDummies** to run
-     _ used in demographics.R and housing.R
-    _ sheets_fun(): maps dataframes for excel export.
-     _ needs libraries **tidverse**, and **openxlsx** to run.
-     _ used in demographics_export.R and housing_export.R
-4. demographics.R
+   This file includes two user defined functions: cleaning_fun() and sheets_fun().
+      cleaning_fun(): performs appropriate data cleaning and variable creation for all raw ACS data files.
+         needs libraries **tidyverse**, **haven** and **fastDummies** to run
+         used in demographics.R and housing.R
+      sheets_fun(): maps dataframes for excel export.
+         needs libraries **tidverse**, and **openxlsx** to run.
+         used in demographics_export.R and housing_export.R
+5. demographics.R
 7. housing.R
 8. export files
-   _ demographics_export.R
-   _ housing_export.R
+      demographics_export.R
+      housing_export.R
