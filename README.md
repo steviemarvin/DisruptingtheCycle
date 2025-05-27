@@ -17,11 +17,11 @@ The code is broadly organized by the source data. This project uses both the Ame
 * This file is the master file that will execute the main code (after the initial data is downloaded to your project). One thing to note about this file is that objects **demog_ddi** and **housing_ddi** are used to call the appropriate .xml file. You should edit this according to your own .xml file in your data folder.
 4. acs_functions.R
 * This file includes two user defined functions: cleaning_fun() and sheets_fun().
-*    cleaning_fun(): performs appropriate data cleaning and variable creation for all raw ACS data files.
-         * needs libraries **tidyverse**, **haven** and **fastDummies** to runused in demographics.R and housing.R
-*   sheets_fun(): maps dataframes for excel export.
-         * needs libraries **tidverse**, and **openxlsx** to run.
-         * used in demographics_export.R and housing_export.R
+* cleaning_fun(): performs appropriate data cleaning and variable creation for all raw ACS data files.
+     * needs libraries **tidyverse**, **haven** and **fastDummies** to runused in demographics.R and housing.R
+* sheets_fun(): maps dataframes for excel export.
+     * needs libraries **tidverse**, and **openxlsx** to run.
+     * used in demographics_export.R and housing_export.R
 5. demographics.R
 6. housing.R
 7. export files
