@@ -7,7 +7,7 @@ You will need a data folder and an output folder to house data files and output 
 ### ACS and CPS
 The code is broadly organized by the source data. This project uses both the American Community Survey and Current Population Survey microdata obtained from IPUMS via the ipumsr package.
 * ACS data is used to obtain 2023 demographic details and details on housing outcomes for low income families with children.
-* CPS data, specifically the Annual Social and Economic Supplements data, is used to obtain details on labor force outcomes for low income families with children.
+* CPS data, specifically the Annual Social and Economic Supplements data, is used to obtain details on labor force outcomes for low income families with children and general poverty breakdowns.
 
 ## Folder: ACS
 1. acs_init_data_load.R
@@ -23,8 +23,14 @@ The code is broadly organized by the source data. This project uses both the Ame
 * sheets_fun(): maps dataframes for excel export.
      * needs libraries **tidverse**, and **openxlsx** to run.
      * used in demographics_export.R and housing_export.R
-5. demographics.R
-6. housing.R
-7. export files
+5. demographics.R and housing.R
+* These files contain code that provide the main analysis for export. 
+6. export files
 * demographics_export.R
 * housing_export.R
+
+## Folder: CPS
+1. cps_init_data_load.R
+* This R script file includes code that submits a data request to IPUMS to obtain data files.
+* You only need to run this the first time to get the necessary .xml and .dat.gz files to load to your workspace. The data files will be saved to your data folder which will be called in by the demographics.R and housing.R 
+3. 
