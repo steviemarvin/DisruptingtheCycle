@@ -36,6 +36,9 @@ asec_charts <- createWorkbook()
 # At least 1 earner
 sheets_fun(at1_earner, asec_charts, s = "At least 1 earner", col = 1)
 
+# Share of household heads experiencing long-term unemployment
+sheets_fun(hh_ltunem, asec_charts, s = "Heads exp lt unem", col = 1)
+
 # Low income families by poverty level 
 sheets_fun(povertylevels, asec_charts, s = "Poverty levels", col = 1)
 
