@@ -1,7 +1,6 @@
 # initial data load
 library(tidyverse)
 library(ipumsr)
-library(here)
 
 # set ipums key
 ipumsr::set_ipums_api_key("ccd674ca01d26d540280185d70c617db212c3619", save = TRUE) 
@@ -36,7 +35,7 @@ acs_demo_2023 <- define_extract_micro(
 
 # Download extract to input folder 
 download_ext <- download_extract(extract = acs_demo_2023, 
-                                 download_dir = "/projects/smarvin/RWJF_Summary/data/", overwrite = TRUE)
+                                 download_dir = "/projects/smarvin/DisruptingtheCycle/data/", overwrite = TRUE)
 
 demo_raw <- read_ipums_micro(download_ext)
 names(demo_raw) <- tolower(names(demo_raw))
@@ -57,7 +56,7 @@ acs_housing <- define_extract_micro(
 
 # Download extract to input folder 
 download_ext <- download_extract(extract = acs_housing, 
-                                 download_dir = "/projects/smarvin/RWJF_Summary/data/", overwrite = TRUE)
+                                 download_dir = "/projects/smarvin/DisruptingtheCycle/data/", overwrite = TRUE)
 
 housing_raw <- read_ipums_micro(download_ext)
 names(housing_raw) <- tolower(names(housing_raw))

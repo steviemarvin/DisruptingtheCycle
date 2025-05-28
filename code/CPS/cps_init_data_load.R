@@ -10,8 +10,8 @@ asec_var_list = c(
   "YEAR", "MONTH",
   "RACE", "HISPAN", "MARST", "RELATE", "AGE", 
   "NCHILD", "ELDCH", "YNGCH", 
-  "OFFTOTVAL", "OFFCUTOFF", 
-  "WORKLY", "CLASSWLY", "UHRSWORKLY", "WKSWORK1"
+  "OFFTOTVAL", "OFFCUTOFF", "INCWAGE",
+  "WORKLY", "CLASSWLY", "UHRSWORKLY", "WKSWORK1", "WKSUNEM1"
 )
 
 # load demographics ipums usa extract
@@ -30,28 +30,10 @@ asec_20082024 <- define_extract_micro(
 
 # Download extract to input folder 
 download_ext <- download_extract(extract = asec_20082024, 
-                                 download_dir = "/projects/smarvin/RWJF_Summary/data/", overwrite = TRUE)
+                                 download_dir = "/projects/smarvin/DisruptingtheCycle/data/", overwrite = TRUE)
 
 asec_raw <- read_ipums_micro(download_ext)
 names(asec_raw) <- tolower(names(asec_raw))
-
-### CPS BASIC DOWNLOAD ###
-cps_var_list = list(
-  var_spe("NCHILD", case_selections = c("1", "2", "3", "4", "5", "6", "7", "8", "9")),
-  "YEAR", "MONTH",
-  "RACE", "HISPAN", "AGE", 
-  "NCHILD", "ELDCH", "YNGCH", 
-  "OFFTOTVAL", "OFFCUTOFF",
-  "LFSTAT", "EMP"
-)
-
-cps_2007_2023 <- define_extract_micro(
-  collection = "cps",
-  description = "RWJF families monthly",
-  samples = c(''),
-  variables = cps_var_list) %>% 
-  submit_extract() %>% 
-  wait_for_extract()
 
 
 
