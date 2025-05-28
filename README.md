@@ -33,4 +33,10 @@ The code is broadly organized by the source data. This project uses both the Ame
 1. cps_init_data_load.R
 * This R script file includes code that submits a data request to IPUMS to obtain data files.
 * You only need to run this the first time to get the necessary .xml and .dat.gz files to load to your workspace. The data files will be saved to your data folder which will be called in by the demographics.R and housing.R 
-3. 
+2. cps_master.R
+* asec_clean.R
+* asec_hh_lfstat.R
+* asec_poverty.R
+* asec_export.R
+3. cps_org.R
+  
