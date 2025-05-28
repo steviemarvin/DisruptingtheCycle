@@ -6,6 +6,7 @@ asec_clean <- asec_raw %>%
     survey_year = year,
     year = year - 1,
     # cleaning up NA values
+    incwage = if_else(incwage == 99999999, NA, incwage),
     offtotval = if_else(offtotval == 9999999999, NA, offtotval),
     offcutoff = if_else(offcutoff == 999999, NA, offcutoff),
     # indicator var: poverty variables
