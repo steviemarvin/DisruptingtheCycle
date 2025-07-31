@@ -5,32 +5,32 @@ poverty_benchmark <- filter(housing_clean,
                           u18 == 1 & poverty < 200 & poverty != 0,
                           related == 101)
 
-povertylevels <- poverty_benchmark %>% 
+povertylevels <- poverty_benchmark |> 
   summarize(pov100 = weighted.mean(pov100, w = hhwt, na.rm = TRUE),
             pov50 = weighted.mean(pov50, w = hhwt, na.rm = TRUE),
             .by = year)
 
-povertylevelsXwbhaa <- poverty_benchmark %>% 
+povertylevelsXwbhaa <- poverty_benchmark |> 
   summarize(pov100 = weighted.mean(pov100, w = hhwt, na.rm = TRUE),
             pov50 = weighted.mean(pov50, w = hhwt, na.rm = TRUE),
-            .by = c(year, wbhaa)) %>% 
-  filter(!is.na(wbhaa)) %>% 
+            .by = c(year, wbhaa)) |> 
+  filter(!is.na(wbhaa)) |> 
   pivot_wider(id_cols = year, 
               names_from = wbhaa, 
               values_from = c("pov100", "pov50"))
 
 distribution_fun <- function(data, povlev){
-  data %>% 
-    filter({{povlev}} == 1) %>% 
+  data |> 
+    filter({{povlev}} == 1) |> 
     summarize(count = sum(hhwt, na.rm = TRUE),
-              .by = c(year, wbhaa)) %>% 
-    filter(!is.na(wbhaa)) %>% 
+              .by = c(year, wbhaa)) |> 
+    filter(!is.na(wbhaa)) |> 
     pivot_wider(id_cols = year, 
                 names_from = wbhaa, 
-                values_from = count) %>% 
+                values_from = count) |> 
     mutate(sum = white + black + hispanic + AIAN + AAPI,
            across(white | black | hispanic | AIAN | AAPI, 
-                  ~.x / sum)) %>% 
+                  ~.x / sum)) |> 
     select(-sum)
   
 }

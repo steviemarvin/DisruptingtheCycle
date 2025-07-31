@@ -23,8 +23,8 @@ asec_20082024 <- define_extract_micro(
               'cps2016_03s', 'cps2017_03s', 'cps2018_03s', 'cps2019_03s',
               'cps2020_03s', 'cps2021_03s', 'cps2022_03s', 'cps2023_03s',
               'cps2024_03s'),
-  variables = asec_var_list) %>% 
-  submit_extract() %>% 
+  variables = asec_var_list) |> 
+  submit_extract() |> 
   wait_for_extract()
 
 

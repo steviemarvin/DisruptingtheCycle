@@ -1,6 +1,6 @@
-asec_clean <- asec_raw %>% 
+asec_clean <- asec_raw |> 
   # filtering out hflag == 0 to ensure 2014 ASEC is properly weighted
-  filter(hflag == 1 | is.na(hflag)) %>% 
+  filter(hflag == 1 | is.na(hflag)) |> 
   mutate(
     # reformatting years for asec (since its about last year)
     survey_year = year,
@@ -75,6 +75,6 @@ asec_clean <- asec_raw %>%
     # reformating relate variable
     relate = case_when(relate == 202 | relate == 203 ~ 201,
                        relate == 1116 | relate == 1117 ~ 1114,
-                       TRUE ~ relate)) %>% 
+                       TRUE ~ relate)) |> 
   dummy_cols(select_columns = 'wbhaa', ignore_na = TRUE)
 

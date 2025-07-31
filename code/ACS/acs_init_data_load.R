@@ -29,8 +29,8 @@ acs_demo_2023 <- define_extract_micro(
   collection = "usa",
   description = 'RWJF_demographics',
   samples = c('us2023a'),
-  variables = demo_var_list) %>% 
-  submit_extract() %>% 
+  variables = demo_var_list) |> 
+  submit_extract() |> 
   wait_for_extract()
 
 # Download extract to input folder 
@@ -50,8 +50,8 @@ acs_housing <- define_extract_micro(
     'us2007a', 'us2008a', 'us2009a', 'us2010a', 'us2011a', 'us2012a',
     'us2013a', 'us2014a', 'us2015a', 'us2016a', 'us2017a', 'us2018a', 
     'us2019a', 'us2021a', 'us2022a', 'us2023a'),
-  variables = housing_var_list) %>% 
-  submit_extract() %>% 
+  variables = housing_var_list) |> 
+  submit_extract() |> 
   wait_for_extract()
 
 # Download extract to input folder 

@@ -1,5 +1,5 @@
 cleaning_fun <- function(data){
-  data %>% 
+  data |>
     mutate(
       # indicator var: respondent is either the hh head or spouse
       hh_head_sp = if_else(related == 101 | related == 201, 1, 0),
