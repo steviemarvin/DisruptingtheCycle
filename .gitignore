@@ -2,3 +2,9 @@
 .Rhistory
 .RData
 .Ruserdata
+*.xml
+*.dat.gz
+*.csv
+*.xlsx
+*.dta
+*.Rproj
